@@ -1,0 +1,19 @@
+[project]
+name = "snake-ai"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Ramez Kanj", email = "rbk26@ic.ac.uk" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pygame-ce>=2.5.8",
+]
+
+[project.scripts]
+snake-ai = "snake_ai:main"
+
+[build-system]
+requires = ["uv_build>=0.12.23,<0.13.0"]
+build-backend = "uv_build"
