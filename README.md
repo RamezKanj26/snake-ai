@@ -34,3 +34,14 @@ The game code is written entirely by hand, without AI coding assistants. No copy
 - **[pygame-ce](https://pyga.me/)** for the game window and rendering
 - **[uv](https://docs.astral.sh/uv/)** for dependency and environment management
 - **[PyTorch](https://pytorch.org/)** for the neural network (coming soon)
+
+## Getting Started
+
+Make sure you have [uv](https://docs.astral.sh/uv/getting-started/installation/) installed, then:
+
+```bash
+git clone https://github.com/RamezKanj26/snake-ai.git
+cd snake-ai
+uv sync
+uv run python src/snake_ai/game.py
+```
