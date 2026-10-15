@@ -56,3 +56,15 @@ uv run python src/snake_ai/game.py
 | → | Move right |
 
 The snake can't reverse directly into itself.
+
+## Project Structure
+
+```
+snake-ai/
+├── src/
+│   └── snake_ai/
+│       ├── __init__.py
+│       └── game.py      # the Snake game
+├── pyproject.toml
+└── README.md
+```
