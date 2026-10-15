@@ -68,3 +68,14 @@ snake-ai/
 ├── pyproject.toml
 └── README.md
 ```
+
+## Reinforcement Learning Plan
+
+The rough plan for the AI side of the project:
+
+- **State:** what the snake "sees", such as danger nearby, its current direction, and where the food is relative to its head.
+- **Actions:** go straight, turn left or turn right.
+- **Rewards:** positive for eating food, negative for dying, possibly small penalties for wandering around too long.
+- **Model:** start with a Deep Q-Network (DQN) in PyTorch, then explore improvements once it learns the basics.
+
+This will evolve as I learn more along the way.
