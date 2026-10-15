@@ -27,3 +27,10 @@ The game code is written entirely by hand, without AI coding assistants. No copy
 - [ ] Reinforcement learning agent with PyTorch
 - [ ] Training and plotting results
 - [ ] Beat the game
+
+## Tech Stack
+
+- **Python 3.12**
+- **[pygame-ce](https://pyga.me/)** for the game window and rendering
+- **[uv](https://docs.astral.sh/uv/)** for dependency and environment management
+- **[PyTorch](https://pytorch.org/)** for the neural network (coming soon)
