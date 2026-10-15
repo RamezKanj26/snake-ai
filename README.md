@@ -45,3 +45,14 @@ cd snake-ai
 uv sync
 uv run python src/snake_ai/game.py
 ```
+
+## Controls
+
+| Key | Action |
+| --- | --- |
+| ↑ | Move up |
+| ↓ | Move down |
+| ← | Move left |
+| → | Move right |
+
+The snake can't reverse directly into itself.
