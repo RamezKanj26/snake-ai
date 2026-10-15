@@ -12,3 +12,18 @@ The game code is written entirely by hand, without AI coding assistants. No copy
 2. **Make it AI-ready.** Restructure the game so an agent can control it step by step, without a human at the keyboard.
 3. **Train an agent.** Use reinforcement learning with PyTorch so the snake learns to play on its own.
 4. **Win the game.** The ultimate goal: an agent that fills the entire board.
+
+## Progress
+
+- [x] Project setup with uv and pygame-ce
+- [x] Draw the grid
+- [x] Draw the snake and food
+- [x] Snake movement with arrow keys
+- [ ] Eating food and growing
+- [ ] Random food placement
+- [ ] Collision detection and game over
+- [ ] Score display
+- [ ] Refactor the game into a reusable environment
+- [ ] Reinforcement learning agent with PyTorch
+- [ ] Training and plotting results
+- [ ] Beat the game
