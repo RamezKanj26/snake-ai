@@ -13,6 +13,14 @@ running = True
 snake = [(8, 12), (7, 12), (6, 12)]
 food = (16, 12)
 direction = (1, 0)
+queue = []
+
+directions = {
+    pygame.K_RIGHT: (1, 0),
+    pygame.K_LEFT: (-1, 0),
+    pygame.K_DOWN: (0, 1),
+    pygame.K_UP: (0, -1),
+}
 
 
 def draw_cell(col, row, colour):
@@ -28,18 +36,15 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_RIGHT and direction != (-1, 0):
-                direction = (1, 0)
+        if event.type == pygame.KEYDOWN and event.key in directions and len(queue) <= 2:
+            queue.append(event.key)
 
-            elif event.key == pygame.K_LEFT and direction != (1, 0):
-                direction = (-1, 0)
+    if queue:
+        key = queue.pop(0)
+        new_direction = directions[key]
 
-            elif event.key == pygame.K_DOWN and direction != (0, -1):
-                direction = (0, 1)
-
-            elif event.key == pygame.K_UP and direction != (0, 1):
-                direction = (0, -1)
+        if new_direction[0] + direction[0] != 0 or new_direction[1] + direction[1] != 0:
+            direction = new_direction
 
     snake.insert(0, (snake[0][0] + direction[0], snake[0][1] + direction[1]))
     snake.pop()
