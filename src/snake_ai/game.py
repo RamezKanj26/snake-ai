@@ -1,4 +1,5 @@
 import pygame
+import random
 
 CELL_SIZE = 20
 GRID_SIZE = 25
@@ -31,6 +32,16 @@ def draw_cell(col, row, colour):
     )
 
 
+def spawn_food(snake):
+    free_cells = []
+
+    for i in range(GRID_SIZE):
+        for j in range(GRID_SIZE):
+            if (i, j) not in snake:
+                free_cells.append((i, j))
+    return random.choice(free_cells)
+
+
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -47,7 +58,24 @@ while running:
             direction = new_direction
 
     snake.insert(0, (snake[0][0] + direction[0], snake[0][1] + direction[1]))
-    snake.pop()
+
+    if snake[0] != food:
+        snake.pop()
+    else:
+        food = spawn_food(snake)
+
+    if (
+        snake[0][0] < 0
+        or snake[0][0] >= GRID_SIZE
+        or snake[0][1] < 0
+        or snake[0][1] >= GRID_SIZE
+    ):
+        print("Game Over")
+        running = False
+
+    if snake[0] in snake[1:]:
+        print("Game Over")
+        running = False
 
     screen.fill("white")
 
