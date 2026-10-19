@@ -21,14 +21,28 @@ The game code is written entirely by hand, without AI coding assistants. No copy
 - [x] Draw the grid
 - [x] Draw the snake and food
 - [x] Snake movement with arrow keys
-- [ ] Eating food and growing
-- [ ] Random food placement
-- [ ] Collision detection and game over
+- [x] Eating food and growing
+- [x] Random food placement
+- [x] Collision detection and game over
 - [ ] Score display
-- [ ] Refactor the game into a reusable environment
+- [ ] Refactor the game into a reusable environment (in progress)
 - [ ] Reinforcement learning agent with PyTorch
 - [ ] Training and plotting results
 - [ ] Beat the game
+
+## Current Stage: Making the Game AI-Ready
+
+The game is playable. Before an agent can play it thousands of times, the code needs a cleanup:
+
+- [ ] Move the game state into a `SnakeGame` class instead of global variables
+- [ ] Add a `reset()` method so a new game starts without restarting the program
+- [ ] Add a `step(action)` method that advances the game by one move and reports the reward, whether the game is over, and the score
+- [ ] Split game logic from drawing, so training can run without a window
+- [ ] Pull collision checking into its own `is_collision(point)` function, so the agent can use it to sense danger
+- [ ] Keep the human-playable version working on top of the new structure
+- [ ] Track the score
+- [ ] End games where the snake wanders too long without eating
+- [ ] Speed up food spawning and collision lookups for long snakes
 
 ## Tech Stack
 
