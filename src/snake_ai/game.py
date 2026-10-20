@@ -1,8 +1,8 @@
 import pygame
 import random
 
-CELL_SIZE = 20
-GRID_SIZE = 25
+CELL_SIZE = 100
+GRID_SIZE = 4
 TOTAL_SIZE = CELL_SIZE * GRID_SIZE
 
 # pygame setup
@@ -11,9 +11,9 @@ screen = pygame.display.set_mode((TOTAL_SIZE, TOTAL_SIZE))
 clock = pygame.time.Clock()
 running = True
 
-snake = [(8, 12), (7, 12), (6, 12)]
-food = (16, 12)
+snake = [((GRID_SIZE - 1) // 2, (GRID_SIZE - 1) // 2)]
 direction = (1, 0)
+food = []
 queue = []
 
 directions = {
@@ -42,6 +42,7 @@ def spawn_food(snake):
     return random.choice(free_cells)
 
 
+food = spawn_food(snake)
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -93,6 +94,6 @@ while running:
 
     pygame.display.flip()
 
-    clock.tick(8)
+    clock.tick(4)
 
 pygame.quit()

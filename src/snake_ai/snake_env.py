@@ -37,10 +37,10 @@ class SnakeGame:
             or point in self.snake[1:]
         )
 
+    def step(self, action):
+        pass
+
 
 if __name__ == "__main__":
     game = SnakeGame()
-    print(game.is_collision((-1, 0)))
-    print(game.is_collision((GRID_SIZE, 5)))
     print(game.is_collision((5, 5)))
-    print(game.is_collision(game.snake[0]))
