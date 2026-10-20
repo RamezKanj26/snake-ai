@@ -32,14 +32,14 @@ The game code is written entirely by hand, without AI coding assistants. No copy
 
 ## Current Stage: Making the Game AI-Ready
 
-The game is playable. Before an agent can play it thousands of times, the code needs a cleanup:
+The game is playable. Before an agent can play it thousands of times, the code needs a cleanup. `game.py` stays untouched as the original hand-built game, and the AI-ready version is built in a new file, `snake_env.py`:
 
 - [ ] Move the game state into a `SnakeGame` class instead of global variables
 - [ ] Add a `reset()` method so a new game starts without restarting the program
 - [ ] Add a `step(action)` method that advances the game by one move and reports the reward, whether the game is over, and the score
 - [ ] Split game logic from drawing, so training can run without a window
 - [ ] Pull collision checking into its own `is_collision(point)` function, so the agent can use it to sense danger
-- [ ] Keep the human-playable version working on top of the new structure
+- [ ] Add a quick way to test the environment by playing it or running random moves
 - [ ] Track the score
 - [ ] End games where the snake wanders too long without eating
 - [ ] Speed up food spawning and collision lookups for long snakes
@@ -80,7 +80,8 @@ snake-ai/
 ├── src/
 │   └── snake_ai/
 │       ├── __init__.py
-│       └── game.py      # the Snake game
+│       ├── game.py      # the original hand-built Snake game
+│       └── snake_env.py # AI-ready version of the game (in progress)
 ├── pyproject.toml
 └── README.md
 ```
